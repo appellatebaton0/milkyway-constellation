@@ -1,7 +1,14 @@
 @abstract class_name MoveBit extends Bit
 
-var master:MoveMasterBit
-var mover:CharacterBody2D
+@onready var master:MoveMasterBit = get_master()
+
+func get_master(with=self, depth := 4) -> MoveMasterBit:
+	var parent = with.get_parent()
+	
+	if parent is MoveMasterBit:
+		return parent
+	else:
+		return get_master(parent, depth -1)
 
 @onready var next:Array[MoveBit] = get_sub_move_bit()
 func get_sub_move_bit():
@@ -14,10 +21,14 @@ func get_sub_move_bit():
 	return response
 
 ## Allows for calling a function down a chain of childed MoveBit
-func recursive_call(function:String):
+func recursive_call(function:String, arg=null):
 	for bit in next:
-		bit.call(function)
-		bit.recursive_call(function)
+		if arg != null:
+			bit.call(function, arg)
+			bit.recursive_call(function, arg)
+		else:
+			bit.call(function)
+			bit.recursive_call(function)
 
 # Ran once when the bit becomes active/inactive.
 func _on_active() -> void:
