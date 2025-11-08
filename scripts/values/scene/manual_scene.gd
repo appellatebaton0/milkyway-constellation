@@ -1,4 +1,4 @@
-class_name ManualPackedScene extends PackedSceneValue
+class_name ManualScene extends SceneValue
 
 @export var input:PackedScene
 
