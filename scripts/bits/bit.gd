@@ -1,5 +1,5 @@
 @abstract class_name Bit extends Bot
-# Provides functionality to its bot.
+## Provides functionality to its bot.
 
 @export var isolated = false
 

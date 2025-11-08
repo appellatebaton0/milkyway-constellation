@@ -68,7 +68,6 @@ func _physics_process(delta: float) -> void:
 			bit.recursive_call("_physics_inactive",delta)
 	
 	if mover != null:
-		print("sliding with ", mover.velocity)
 		mover.move_and_slide()
 		
 		if bot is Node2D:
