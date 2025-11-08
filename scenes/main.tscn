@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cy2m2tcqs3fy7" path="res://scripts/bot.gd" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://d0txgj1qh0afc" path="res://scripts/bits/movebit/movemasterbit.gd" id="2_0wfyh"]
-[ext_resource type="Script" uid="uid://dchtqd0l04dlo" path="res://scripts/bits/movebit/floatbit.gd" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://dchtqd0l04dlo" path="res://scripts/bits/movebit/controlbit/floatbit.gd" id="3_sugp2"]
 
 [sub_resource type="Gradient" id="Gradient_0wfyh"]
 
@@ -22,6 +22,7 @@ metadata/_custom_type_script = "uid://d0txgj1qh0afc"
 
 [node name="FloatBit" type="Node" parent="Player/CharacterBody2D/MoveMasterBit"]
 script = ExtResource("3_sugp2")
+amount = Vector2(1.635, 0)
 metadata/_custom_type_script = "uid://dchtqd0l04dlo"
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
