@@ -1,5 +1,8 @@
 @abstract class_name MoveBit extends Bit
 
+var master:MoveMasterBit
+var mover:CharacterBody2D
+
 @onready var next:Array[MoveBit] = get_sub_move_bit()
 func get_sub_move_bit():
 	var response:Array[MoveBit]
