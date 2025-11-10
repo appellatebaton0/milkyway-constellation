@@ -20,17 +20,10 @@ script = ExtResource("1_o5qli")
 script = ExtResource("2_0wfyh")
 metadata/_custom_type_script = "uid://d0txgj1qh0afc"
 
-[node name="PlatformerBit" type="Node" parent="Player/CharacterBody2D/MoveMasterBit"]
+[node name="FloatBit" type="Node" parent="Player/CharacterBody2D/MoveMasterBit"]
 script = ExtResource("3_sugp2")
 amount = Vector2(1.635, 0)
 metadata/_custom_type_script = "uid://dchtqd0l04dlo"
-
-[node name="WallJumpBit" type="Node" parent="Player/CharacterBody2D/MoveMasterBit/PlatformerBit"]
-script = ExtResource("3_sugp2")
-amount = Vector2(1.635, 0)
-metadata/_custom_type_script = "uid://dchtqd0l04dlo"
-
-[node name="SwimBit" type="Node" parent="Player/CharacterBody2D/MoveMasterBit"]
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture = SubResource("GradientTexture2D_sugp2")
