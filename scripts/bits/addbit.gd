@@ -1,7 +1,12 @@
-@abstract class_name AddBit extends Bit
+class_name AddBit extends Bit
 
 
-static func AddBitToParent(Parent: NodeValue, ChildNode: PackedSceneValue):
+static func AddBitToParent(parent: NodeValue, child: PackedSceneValue) -> void:
 	print("mAybe??")
-	Parent.add_child(ChildNode)
-	return Parent
+
+	return parent.add_child(child)
+
+#static func AddBitToParent(parent: ManualNode, child: ManualPackedScene) -> void:
+	#print("mAybe??")
+#
+	#return parent.add_child(child)
