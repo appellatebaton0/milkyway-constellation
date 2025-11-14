@@ -1,7 +1,13 @@
-@abstract class_name DeleteBit extends Bit
+class_name DeleteBit extends Bit
 
-## IDK but here should be where the bit gets added 
-static func DelBit(ToDeleteBit: NodeValue) -> void: 
-		#ParentBit = self
-	return ToDeleteBit.queue_free()
+@export var ToDeleteBit: NodeValue
+
+func DeleteBit(): 
+	var RemoveBit: Node = ToDeleteBit.value()
+	
+	if not is_instance_valid(RemoveBit):
+		return
+	
+	RemoveBit.queue_free()
+	print("DeleteBit Working!")
 	

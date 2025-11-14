@@ -1,13 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://kxgtt21gwmhu"]
+[gd_scene load_steps=8 format=3 uid="uid://kxgtt21gwmhu"]
 
 [ext_resource type="Script" uid="uid://cy2m2tcqs3fy7" path="res://scripts/bot.gd" id="1_o5qli"]
-[ext_resource type="Script" uid="uid://gc4ughq22bge" path="res://scripts/values/PackedScene/manual.gd" id="1_tipki"]
 [ext_resource type="Script" uid="uid://d0txgj1qh0afc" path="res://scripts/bits/movebit/movemasterbit.gd" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://dchtqd0l04dlo" path="res://scripts/bits/movebit/controlbit/floatbit.gd" id="3_sugp2"]
 [ext_resource type="Script" uid="uid://oucmeoymvnc8" path="res://scripts/bits/deletebit.gd" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://dm7f7v6fhx7v1" path="res://scripts/bits/addbit.gd" id="4_tbgi4"]
-[ext_resource type="Script" uid="uid://dhbobx6n0mxt8" path="res://scripts/values/Node/manualNode.gd" id="5_tefeu"]
-[ext_resource type="PackedScene" uid="uid://5jadxjup1ku3" path="res://scripts/values/PackedScene/TestPackedScene.tscn" id="7_o6xl0"]
 
 [sub_resource type="Gradient" id="Gradient_0wfyh"]
 
@@ -25,16 +22,9 @@ script = ExtResource("1_o5qli")
 script = ExtResource("2_0wfyh")
 metadata/_custom_type_script = "uid://d0txgj1qh0afc"
 
-[node name="AddBit" type="Node" parent="Player/CharacterBody2D/MoveMasterBit" node_paths=PackedStringArray("parent", "child")]
+[node name="AddBit" type="Node" parent="Player/CharacterBody2D/MoveMasterBit"]
 script = ExtResource("4_tbgi4")
-parent = NodePath("../../../ManualNode")
-child = NodePath("../../../ManualPackedScene")
 metadata/_custom_type_script = "uid://dm7f7v6fhx7v1"
-
-[node name="DeleteBit" type="Node" parent="Player/CharacterBody2D/MoveMasterBit" node_paths=PackedStringArray("ToDeleteBit")]
-script = ExtResource("4_jyhfs")
-ToDeleteBit = NodePath("../SwimBit")
-metadata/_custom_type_script = "uid://oucmeoymvnc8"
 
 [node name="PlatformerBit" type="Node" parent="Player/CharacterBody2D/MoveMasterBit"]
 script = ExtResource("3_sugp2")
@@ -48,17 +38,11 @@ metadata/_custom_type_script = "uid://dchtqd0l04dlo"
 
 [node name="SwimBit" type="Node" parent="Player/CharacterBody2D/MoveMasterBit"]
 
+[node name="DeleteBit" type="Node" parent="Player/CharacterBody2D/MoveMasterBit"]
+script = ExtResource("4_jyhfs")
+metadata/_custom_type_script = "uid://oucmeoymvnc8"
+
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture = SubResource("GradientTexture2D_sugp2")
-
-[node name="ManualNode" type="Node" parent="Player" node_paths=PackedStringArray("input")]
-script = ExtResource("5_tefeu")
-input = NodePath("../CharacterBody2D/MoveMasterBit")
-metadata/_custom_type_script = "uid://dhbobx6n0mxt8"
-
-[node name="ManualPackedScene" type="Node" parent="Player"]
-script = ExtResource("1_tipki")
-input = ExtResource("7_o6xl0")
-metadata/_custom_type_script = "uid://gc4ughq22bge"
 
 [node name="Camera2D" type="Camera2D" parent="."]
